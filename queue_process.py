@@ -2,9 +2,11 @@ import collections
 
 pl = input()
 words = pl.split()
-queue = collections.deque(words)
+queue = collections.deque()
+for i in words:
+    queue.appendleft(i)
 print(queue)
-while queue:
-    word = queue.popleft()
+
+for word in words:
     if "o" in word:
         print(word)
